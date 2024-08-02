@@ -1,0 +1,33 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <div>
+            Your weight in Kgs: <input id="weight" type="number"/>
+        </div>
+        <div>
+            Your height in cms: <input id="height" type="number"/>
+        </div>
+        <div>
+            <button onclick="calculateBMI()">Calculate BMI</button>
+        </div>
+        <div id="result">
+        </div>
+    </body>
+    <script >
+        function calculateBMI() {
+            var weightInKg = document.getElementById('weight').value;
+            var heightInCm = document.getElementById('height').value;
+          
+            weightInKg = parseFloat(weightInKg);
+            heightInCm = parseFloat(heightInCm);
+          
+            heightInMeters = heightInCm / 100;
+          
+            var bmi = (weightInKg) / (heightInMeters * heightInMeters);
+            console.log(bmi)
+            document.getElementById("result").innerHTML = "Your BMI is " + bmi.toFixed(2)
+          }
+    </script>
+</html> 

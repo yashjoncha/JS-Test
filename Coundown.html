@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Countdown Timer</title>
+    <style>
+    #countdown{
+      padding: 20px;
+      font-size: 100px;
+    }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input id="timer" type="number" />
+    </div>
+    <button onClick="CountDown()">
+      Start
+    </button>
+    <div id="countdown">
+
+    </div>
+  </body>
+  <script>
+    function CountDown(){
+      var start = document.getElementById("timer").value;
+      setInterval(function(){
+        document.getElementById("countdown").innerHTML = start;
+        start = start - 1;
+      }, 1000)
+    } 
+  </script>
+</html>

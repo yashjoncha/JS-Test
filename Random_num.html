@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <style>
+            .main-box{
+                margin-left: auto;
+                margin-right: auto;
+                width: 500px;
+                text-align: center;
+                background-color: #42a5f5;
+                padding: 16px;
+                border: 2px solid #0077c2;
+            }
+            
+            .question {
+                margin-top: 8px;
+                font-size: 24px;
+            }
+            
+            .input-div {
+                margin-top: 8px;
+            }
+            
+            .guess {
+                padding: 4px;
+                font-size: 40px;
+                width: 100px;
+                text-align: center;
+            }
+            
+            .button-div {
+                margin-top: 8px;
+            }
+            
+            
+            .result-div {
+                height: 50px;
+                margin-top: 8px;
+                font-size: 24px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main-box">
+            <div class="question">
+                Which number (0 - 100) am I thinking of??
+            </div>
+            <div class="input-div">
+                <input class="guess" id="guess" type="number" min=0 max=100/>
+            </div>
+            <div class="button-div">
+                <button class="check" onclick='checkGuess()' >Check Your Guess</button>
+            </div>
+            <div id="result" class="result-div">
+            </div>
+        </div>
+    </body>
+    <script >
+        var Random = parseInt(Math.random() * 100);
+        console.log(Random)
+
+        function checkGuess() {
+          var userGuess = parseInt(document.getElementById("guess").value)
+        
+          var resultDiv = document.getElementById("result");
+        
+          if (userGuess > Random) {
+            resultDiv.innerHTML = "Your guess is higher than my number";
+            resultDiv.style.color = "red";
+          }
+        
+          if (userGuess < Random) {
+            resultDiv.innerHTML = "Your guess is lower than my number";
+            resultDiv.style.color = "blue";
+          }
+        
+          if (userGuess == Random) {
+            resultDiv.innerHTML = "Yes! you guessed it right!";
+            resultDiv.style.color = "green";
+          }
+        }
+    </script>
+</html> 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="counter.css">
+    <style>
+        .counter-box {
+            border: 1px solid black;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .counter-button button{
+            height: 100px;
+            width: 300px;
+            font-size: 40px;
+        }
+        .counter-number{
+            height: 100px;
+            width: 300px;
+            text-align: center;
+            font-size: 70px;
+        }
+    </style>
+    </head>
+    
+    <body>
+        <div class="counter-box">
+            <div class="counter-button">
+                <button onclick=increaseCount()>+</button>
+            </div>
+            <div class="counter-number" id="number" onclick=resetCount()>
+                0
+            </div>
+            <div class="counter-button">
+                <button onclick=decreaseCount() >-</button>
+            </div>
+        </div>
+    </body>
+    <script>
+        current_number = 0
+
+function increaseCount() {
+  current_number = current_number + 1;
+  document.getElementById('number').innerHTML = current_number;
+  console.log(current_number)
+}
+
+function decreaseCount() {
+  current_number = current_number - 1;
+  document.getElementById('number').innerHTML = current_number;
+}
+function resetCount(){
+    current_number=0
+    document.getElementById('number').innerHTML = current_number;
+}
+
+    </script>
+</html>
